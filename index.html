@@ -53,7 +53,7 @@
           <!-- voto -->
           <div>
             <span>Voto:</span>
-            {{film.vote_average}}
+            <i class="fas fa-star" v-for="star in conversioneVoto(film)"></i>
           </div>
 
         </div>

@@ -24,6 +24,9 @@ var app = new Vue({
 
       this.ricercaUtente = '';
 
+    },
+    conversioneVoto: function (voti) {
+      return Math.ceil(voti.vote_average / 2)
     }
   }
 
