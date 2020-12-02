@@ -22,7 +22,7 @@
         </h1>
 
         <!-- barra ricerca film/serie -->
-        <input v-model="ricercaUtente" v-on:keydown.enter="searchMovie" type="text" name="" value="" placeholder="Search">
+        <input v-model="ricercaUtente" v-on:keydown.enter="searchMovie" placeholder="Search">
 
       </div>
 
@@ -31,6 +31,9 @@
 
         <!-- contenitore di film/serie -->
         <div class="content-movie" v-for="film in filmTrovati">
+
+          <!-- copertina -->
+          <img :src="generatoreCopertina(film.poster_path)" alt="">
 
           <!-- titolo -->
           <div>

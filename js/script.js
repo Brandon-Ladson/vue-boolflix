@@ -10,7 +10,7 @@ var app = new Vue({
     filmTrovati: []
   },
   methods: {
-
+    // funzione per filtrare i film
     searchMovie: function () {
 
       axios.get(urlBase + apiKey + lingua + '&query=' + this.ricercaUtente)
@@ -25,11 +25,23 @@ var app = new Vue({
       this.ricercaUtente = '';
 
     },
+    // funzione per convertire i voti
     conversioneVoto: function (voti) {
+
       return Math.ceil(voti.vote_average / 2)
+
+    },
+    // funzione per generare il percorso immagine
+    generatoreCopertina: function (foto) {
+
+      if (foto != null) {
+        return 'https://image.tmdb.org/t/p/' + 'w342' + foto;
+      } else {
+        return 'img/no-poster.png';
+      }
+
     }
+
   }
-
-
 
 });

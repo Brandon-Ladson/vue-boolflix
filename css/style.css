@@ -10,6 +10,10 @@ body{
   background-color: #2F2F2F;
 }
 
+img{
+  max-width: 100%;
+}
+
 /* regole top bar */
 #app .top-bar{
   display: flex;
@@ -39,7 +43,6 @@ body{
 #app .container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin: 120px 2% 20px 2%;
 }
 
@@ -47,19 +50,35 @@ body{
 #app .container .content-movie{
   width: calc(100% / 4 - 20px);
   margin: 0 10px 20px 10px;;
-  height: 392px;
+  min-height: 580px;
   padding: 40px 10px;
   border: 3px solid #fff;
   color: #808080;
   font-weight: bold;
-  /* debug */
   background-color: #000;
 }
 
+/* regole contenitore film/serie */
+#app .container .content-movie > div{
+  display: none;
+}
+
+/* regole span */
 #app .container .content-movie span{
   color: #fff;
 }
 
+/* regole voto */
 #app .container .content-movie i{
   color: #ffd700;
+}
+
+/* regole per rendere visibili div con mouse hover*/
+#app .container .content-movie:hover > div{
+  display: block;
+}
+
+/* regole per rendere invisibile copertina con mouse hover*/
+#app .container .content-movie:hover > img{
+  display: none;
 }
