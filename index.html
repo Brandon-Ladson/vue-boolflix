@@ -22,7 +22,7 @@
         </h1>
 
         <!-- barra ricerca film/serie -->
-        <input type="text" name="" value="" placeholder="Search">
+        <input v-model="ricercaUtente" v-on:keydown.enter="searchMovie" type="text" name="" value="" placeholder="Search">
 
       </div>
 
@@ -30,7 +30,31 @@
       <div class="container">
 
         <!-- contenitore di film/serie -->
-        <div class="content-movie">
+        <div class="content-movie" v-for="film in filmTrovati">
+
+          <!-- titolo -->
+          <div>
+            <span>Titolo:</span>
+            {{film.title}}
+          </div>
+
+          <!-- titolo originale -->
+          <div>
+            <span>Titolo originale:</span>
+            {{film.original_title}}
+          </div>
+
+          <!-- lingua -->
+          <div>
+            <span>Lingua:</span>
+            {{film.original_language}}
+          </div>
+
+          <!-- voto -->
+          <div>
+            <span>Voto:</span>
+            {{film.vote_average}}
+          </div>
 
         </div>
 
@@ -40,7 +64,7 @@
 
 
     <!-- javascript -->
-    <script type="text/javascript" src="js/script">
+    <script type="text/javascript" src="js/script.js">
 
     </script>
 

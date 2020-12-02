@@ -7,7 +7,7 @@
 
 body{
   font-family: sans-serif;
-  background-color: #808080;
+  background-color: #696969;
 }
 
 /* regole top bar */
@@ -25,7 +25,7 @@ body{
 }
 
 #app .top-bar h1{
-  color: red;
+  color: #ff0000;
 }
 
 #app .top-bar input{
@@ -41,18 +41,21 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   margin: 120px 2% 20px 2%;
-  /* debug */
-  background-color: yellow;
-  min-height: 100vh;
 }
 
 /* regole content movie */
 #app .container .content-movie{
-  text-align: center;
   width: calc(100% / 4 - 20px);
   margin: 0 10px 20px 10px;;
   height: 392px;
-  padding: 20px;
+  padding: 40px 10px;
+  border: 3px solid #fff;
+  color: #808080;
+  font-weight: bold;
   /* debug */
-  background-color: lightgreen;
+  background-color: #000;
+}
+
+#app .container .content-movie span{
+  color: #fff;
 }
