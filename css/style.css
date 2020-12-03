@@ -73,6 +73,18 @@ img{
   color: #ffd700;
 }
 
+#app .container .content-movie .fas{
+  margin-left: 5px;
+}
+
+#app .container .content-movie .fas:first-of-type{
+  margin-left: 0;
+}
+
+#app .container .content-movie .far{
+  margin-right: 5px;
+}
+
 /* regole per rendere visibili div con mouse hover*/
 #app .container .content-movie:hover > div{
   display: block;

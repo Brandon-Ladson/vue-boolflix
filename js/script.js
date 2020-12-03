@@ -1,7 +1,5 @@
 // https://api.themoviedb.org/3/search/movie?api_key=75fa11ba07d05d73ee35e8943a4a42f9&query='ricercaUtente'
 const apiKey = '75fa11ba07d05d73ee35e8943a4a42f9';
-const urlBase = 'https://api.themoviedb.org/3/search/movie?api_key=';
-const lingua = '&language=it-IT&';
 
 var app = new Vue({
   el: '#app',
@@ -13,7 +11,7 @@ var app = new Vue({
     // funzione per filtrare i film
     searchMovie: function () {
 
-      axios.get(urlBase + apiKey + lingua + '&query=' + this.ricercaUtente)
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=it-IT&query=' + this.ricercaUtente)
       .then(risultato => {
 
         this.filmTrovati = risultato.data.results;
@@ -40,6 +38,10 @@ var app = new Vue({
         return 'img/no-poster.png';
       }
 
+    },
+
+    generatoreBadiare: function (lingua) {
+      return 'https://www.countryflags.io/' + lingua + '/flat/64.png';
     }
 
   }
