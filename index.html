@@ -47,13 +47,6 @@
             {{film.original_title ? film.original_title : film.original_name}}
           </div>
 
-          <!-- lingua -->
-          <div>
-            <span>Lingua:</span>
-            {{film.original_language}}
-            <img :src="generatoreBadiare(film.original_language)" alt="">
-          </div>
-
           <!-- voto -->
           <div>
             <span>Voto:</span>
@@ -61,12 +54,18 @@
             <i class="far fa-star" v-for="star in (5 - conversioneVoto(film))"></i>
           </div>
 
+          <!-- lingua -->
+          <div>
+            <span>Lingua:</span>
+            {{film.original_language}}
+            <img :src="generatoreBadiare(film.original_language)" alt="">
+          </div>
+
         </div>
 
       </div>
 
     </div>
-
 
     <!-- javascript -->
     <script type="text/javascript" src="js/script.js">

@@ -48,7 +48,7 @@ var app = new Vue({
     },
 
     generatoreBadiare: function (lingua) {
-      return 'img/flags/' + lingua + '.png';
+      return 'img/flags/' + lingua + '-100.png';
     }
 
   }

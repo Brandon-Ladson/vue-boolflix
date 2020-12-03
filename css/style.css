@@ -10,10 +10,6 @@ body{
   background-color: #2F2F2F;
 }
 
-img{
-  max-width: 100%;
-}
-
 /* regole top bar */
 #app .top-bar{
   display: flex;
@@ -50,15 +46,21 @@ img{
 #app .container .content-movie{
   width: calc(100% / 4 - 20px);
   margin: 0 10px 20px 10px;;
-  min-height: 580px;
-  padding: 40px 10px;
+  height: 510px;
+  /* padding: 40px 10px; */
   border: 3px solid #fff;
   color: #808080;
   font-weight: bold;
   background-color: #000;
 }
 
-/* regole contenitore film/serie */
+/* regole copertina */
+#app .container .content-movie > img{
+  width: 100%;
+  height: 100%;
+}
+
+/* regole contenitori info film */
 #app .container .content-movie > div{
   display: none;
 }
@@ -87,11 +89,10 @@ img{
 
 /* regole lingua */
 #app .container .content-movie div > img{
-  width: 50px;
+  width: 72.26px;
+  height: 50px;
   border: 3px solid #fff;
-  border-radius: 50%;
 }
-
 
 /* regole per rendere visibili div con mouse hover*/
 #app .container .content-movie:hover > div{
