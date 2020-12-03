@@ -1,22 +1,29 @@
-// https://api.themoviedb.org/3/search/movie?api_key=75fa11ba07d05d73ee35e8943a4a42f9&query='ricercaUtente'
-const apiKey = '75fa11ba07d05d73ee35e8943a4a42f9';
-
 var app = new Vue({
   el: '#app',
   data: {
     ricercaUtente: '',
+    apiKey: '75fa11ba07d05d73ee35e8943a4a42f9',
     filmTrovati: []
   },
   methods: {
     // funzione per filtrare i film
     searchMovie: function () {
 
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=it-IT&query=' + this.ricercaUtente)
+      this.filmTrovati = [];
+
+      // richiesta film
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + this.apiKey + '&language=it-IT&query=' + this.ricercaUtente)
       .then(risultato => {
 
-        this.filmTrovati = risultato.data.results;
+        this.filmTrovati = this.filmTrovati.concat(risultato.data.results);
 
-        console.log(this.filmTrovati);
+      });
+
+      // richiesta serie tv
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=' + this.apiKey + '&language=it-IT&query=' + this.ricercaUtente)
+      .then(risultato => {
+
+        this.filmTrovati = this.filmTrovati.concat(risultato.data.results);
 
       });
 
@@ -41,7 +48,7 @@ var app = new Vue({
     },
 
     generatoreBadiare: function (lingua) {
-      return 'https://www.countryflags.io/' + lingua + '/flat/64.png';
+      return 'img/flags/' + lingua + '.png';
     }
 
   }

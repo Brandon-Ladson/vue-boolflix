@@ -38,19 +38,19 @@
           <!-- titolo -->
           <div>
             <span>Titolo:</span>
-            {{film.title}}
+            {{film.title ? film.title : film.name}}
           </div>
 
           <!-- titolo originale -->
           <div>
             <span>Titolo originale:</span>
-            {{film.original_title}}
+            {{film.original_title ? film.original_title : film.original_name}}
           </div>
 
           <!-- lingua -->
           <div>
             <span>Lingua:</span>
-            <!-- {{film.original_language}} -->
+            {{film.original_language}}
             <img :src="generatoreBadiare(film.original_language)" alt="">
           </div>
 
