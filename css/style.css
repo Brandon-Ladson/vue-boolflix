@@ -44,10 +44,10 @@ body{
 
 /* regole content movie */
 #app .container .content-movie{
+  position: relative;
   width: calc(100% / 4 - 20px);
   margin: 0 10px 20px 10px;;
   height: 510px;
-  /* padding: 40px 10px; */
   border: 3px solid #fff;
   color: #808080;
   font-weight: bold;
@@ -55,7 +55,7 @@ body{
 }
 
 /* regole copertina */
-#app .container .content-movie > img{
+#app .container .content-movie .cover{
   width: 100%;
   height: 100%;
 }
@@ -63,6 +63,11 @@ body{
 /* regole contenitori info film */
 #app .container .content-movie > div{
   display: none;
+  margin: 0 10px 5px 10px;
+}
+
+#app .container .content-movie > div:first-of-type{
+  margin-top: 40px;
 }
 
 /* regole span */
@@ -88,18 +93,27 @@ body{
 }
 
 /* regole lingua */
-#app .container .content-movie div > img{
+#app .container .content-movie .flag{
+  display: none;
   width: 72.26px;
   height: 50px;
   border: 3px solid #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
-/* regole per rendere visibili div con mouse hover*/
+/* regole per rendere visibili div e flag con mouse hover*/
 #app .container .content-movie:hover > div{
   display: block;
 }
 
+#app .container .content-movie:hover .flag{
+  display: block;
+}
+
 /* regole per rendere invisibile copertina con mouse hover*/
-#app .container .content-movie:hover > img{
+#app .container .content-movie:hover .cover{
   display: none;
 }

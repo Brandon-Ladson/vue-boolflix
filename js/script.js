@@ -6,7 +6,7 @@ var app = new Vue({
     filmTrovati: []
   },
   methods: {
-    // funzione per filtrare i film
+    // funzione per filtrare film/serie tv
     searchMovie: function () {
 
       this.filmTrovati = [];
@@ -33,10 +33,10 @@ var app = new Vue({
     // funzione per convertire i voti
     conversioneVoto: function (voti) {
 
-      return Math.ceil(voti.vote_average / 2)
+      return Math.ceil(voti.vote_average / 2);
 
     },
-    // funzione per generare il percorso immagine
+    // funzione per generare il percorso per la cover
     generatoreCopertina: function (foto) {
 
       if (foto != null) {
@@ -46,9 +46,11 @@ var app = new Vue({
       }
 
     },
-
+    // funzione per generare il percorso per la bandiera
     generatoreBadiare: function (lingua) {
+
       return 'img/flags/' + lingua + '-100.png';
+
     }
 
   }

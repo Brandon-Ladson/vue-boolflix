@@ -33,7 +33,7 @@
         <div class="content-movie" v-for="film in filmTrovati">
 
           <!-- copertina -->
-          <img :src="generatoreCopertina(film.poster_path)" alt="">
+          <img class="cover" :src="generatoreCopertina(film.poster_path)" alt="">
 
           <!-- titolo -->
           <div>
@@ -55,11 +55,7 @@
           </div>
 
           <!-- lingua -->
-          <div>
-            <span>Lingua:</span>
-            {{film.original_language}}
-            <img :src="generatoreBadiare(film.original_language)" alt="">
-          </div>
+          <img class="flag" :src="generatoreBadiare(film.original_language)" alt="">
 
         </div>
 
