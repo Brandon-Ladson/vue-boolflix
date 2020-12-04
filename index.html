@@ -35,6 +35,11 @@
           <!-- copertina -->
           <img class="cover" :src="generatoreCopertina(film.poster_path)" alt="">
 
+          <!-- lingua -->
+          <div class="flag">
+            <img :src="generatoreBadiare(film.original_language)" alt="">
+          </div>
+
           <!-- titolo -->
           <div>
             <span>Titolo:</span>
@@ -54,8 +59,10 @@
             <i class="far fa-star" v-for="star in (5 - conversioneVoto(film))"></i>
           </div>
 
-          <!-- lingua -->
-          <img class="flag" :src="generatoreBadiare(film.original_language)" alt="">
+          <div>
+            <span>Overview:</span>
+            {{film.overview}}
+          </div>
 
         </div>
 

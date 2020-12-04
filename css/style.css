@@ -60,14 +60,25 @@ body{
   height: 100%;
 }
 
+/* regole lingua */
+#app .container .content-movie .flag{
+  margin: 40px 0 20px 0;
+}
+
+#app .container .content-movie .flag img{
+  width: 72.26px;
+  height: 50px;
+  border: 3px solid #fff;
+}
+
 /* regole contenitori info film */
 #app .container .content-movie > div{
   display: none;
   margin: 0 10px 5px 10px;
 }
 
-#app .container .content-movie > div:first-of-type{
-  margin-top: 40px;
+#app .container .content-movie > div:last-of-type{
+  margin-bottom: 40px;
 }
 
 /* regole span */
@@ -92,24 +103,19 @@ body{
   margin-right: 5px;
 }
 
-/* regole lingua */
-#app .container .content-movie .flag{
-  display: none;
-  width: 72.26px;
-  height: 50px;
-  border: 3px solid #fff;
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translate(-50%);
+/* regole per rendere aggiunrere overflow con mouse hover */
+#app .container .content-movie:hover{
+  overflow: auto;
 }
 
-/* regole per rendere visibili div e flag con mouse hover*/
-#app .container .content-movie:hover > div{
-  display: block;
-}
-
+/* regole per rendere visibile lingua con mouse hover */
 #app .container .content-movie:hover .flag{
+  display: flex;
+  justify-content: center;
+}
+
+/* regole per rendere visibili div con mouse hover*/
+#app .container .content-movie:hover > div{
   display: block;
 }
 
