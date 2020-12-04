@@ -26,11 +26,16 @@
 
       </div>
 
-      <!-- contenitore secondario -->
+      <!-- contenitore film -->
       <div class="container">
 
+        <!-- tipologia contenuto -->
+        <h1 :class="(tipoVisibile === true ? 'visibile' : 'invisibile')">
+          Film
+        </h1>
+
         <!-- contenitore di film/serie -->
-        <div class="content-movie" v-for="film in filmTrovati">
+        <div class="content" v-for="film in filmTrovati">
 
           <!-- copertina -->
           <img class="cover" :src="generatoreCopertina(film.poster_path)" alt="">
@@ -43,13 +48,13 @@
           <!-- titolo -->
           <div>
             <span>Titolo:</span>
-            {{film.title ? film.title : film.name}}
+            {{film.title}}
           </div>
 
           <!-- titolo originale -->
           <div>
             <span>Titolo originale:</span>
-            {{film.original_title ? film.original_title : film.original_name}}
+            {{film.original_title}}
           </div>
 
           <!-- voto -->
@@ -62,6 +67,53 @@
           <div>
             <span>Overview:</span>
             {{film.overview}}
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- contenitore serie tv -->
+      <div class="container">
+
+        <!-- tipologia contenuto -->
+        <h1 :class="(tipoVisibile === true ? 'visibile' : 'invisibile')">
+          Serie TV
+        </h1>
+
+        <!-- contenitore di film/serie -->
+        <div class="content" v-for="serie in serieTrovate">
+
+          <!-- copertina -->
+          <img class="cover" :src="generatoreCopertina(serie.poster_path)" alt="">
+
+          <!-- lingua -->
+          <div class="flag">
+            <img :src="generatoreBadiare(serie.original_language)" alt="">
+          </div>
+
+          <!-- titolo -->
+          <div>
+            <span>Titolo:</span>
+            {{serie.name}}
+          </div>
+
+          <!-- titolo originale -->
+          <div>
+            <span>Titolo originale:</span>
+            {{serie.original_name}}
+          </div>
+
+          <!-- voto -->
+          <div>
+            <span>Voto:</span>
+            <i class="fas fa-star" v-for="star in conversioneVoto(serie)"></i>
+            <i class="far fa-star" v-for="star in (5 - conversioneVoto(serie))"></i>
+          </div>
+
+          <div>
+            <span>Overview:</span>
+            {{serie.overview}}
           </div>
 
         </div>
