@@ -26,6 +26,13 @@
 
       </div>
 
+      <!-- messaggio cosa vuoi guardare -->
+      <div class="cosa-guardare" :class="(cosaGuardareVisibile === true ? 'visibile' : 'invisibile')">
+        <h1>
+          Cosa vuoi guardare?
+        </h1>
+      </div>
+
       <!-- contenitore film -->
       <div class="container">
 
@@ -47,25 +54,33 @@
 
           <!-- titolo -->
           <div>
-            <span>Titolo:</span>
+            <span>
+              Titolo:
+            </span>
             {{film.title}}
           </div>
 
           <!-- titolo originale -->
           <div>
-            <span>Titolo originale:</span>
+            <span>
+              Titolo originale:
+            </span>
             {{film.original_title}}
           </div>
 
           <!-- voto -->
           <div>
-            <span>Voto:</span>
+            <span>
+              Voto:
+            </span>
             <i class="fas fa-star" v-for="star in conversioneVoto(film)"></i>
             <i class="far fa-star" v-for="star in (5 - conversioneVoto(film))"></i>
           </div>
 
           <div>
-            <span>Overview:</span>
+            <span>
+              Overview:
+            </span>
             {{film.overview}}
           </div>
 
@@ -94,25 +109,33 @@
 
           <!-- titolo -->
           <div>
-            <span>Titolo:</span>
+            <span>
+              Titolo:
+            </span>
             {{serie.name}}
           </div>
 
           <!-- titolo originale -->
           <div>
-            <span>Titolo originale:</span>
+            <span>
+              Titolo originale:
+            </span>
             {{serie.original_name}}
           </div>
 
           <!-- voto -->
           <div>
-            <span>Voto:</span>
+            <span>
+              Voto:
+            </span>
             <i class="fas fa-star" v-for="star in conversioneVoto(serie)"></i>
             <i class="far fa-star" v-for="star in (5 - conversioneVoto(serie))"></i>
           </div>
 
           <div>
-            <span>Overview:</span>
+            <span>
+              Overview:
+            </span>
             {{serie.overview}}
           </div>
 

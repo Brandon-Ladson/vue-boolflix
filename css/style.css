@@ -35,6 +35,17 @@ body{
   border-radius: 3px;
 }
 
+/* regole cosa vuoi guardare */
+#app .cosa-guardare{
+  height: 100%;
+  text-align: center;
+}
+
+#app .cosa-guardare h1{
+  color: #fff;
+  margin-top: 25%;
+}
+
 /* regole container */
 #app .container{
   display: flex;
@@ -140,4 +151,32 @@ body{
 
 .invisibile{
   display: none;
+}
+
+/* REGOLE EXTRA SMALL */
+@media all and (max-width: 499px){
+
+  #app .container .content{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+}
+
+/* REGOLE SMALL */
+@media all and (min-width: 500px) and (max-width: 999px){
+
+  #app .container .content{
+    width: calc(100% / 2 - 20px);
+  }
+
+}
+
+/* REGOLE MEDIUM */
+@media all and (min-width: 1000px) and (max-width: 1300px){
+
+  #app .container .content{
+    width: calc(100% / 3 - 20px);
+  }
+
 }

@@ -4,6 +4,7 @@ var app = new Vue({
     ricercaUtente: '',
     apiKey: '75fa11ba07d05d73ee35e8943a4a42f9',
     tipoVisibile: false,
+    cosaGuardareVisibile: true,
     filmTrovati: [],
     serieTrovate: []
   },
@@ -11,27 +12,33 @@ var app = new Vue({
     // funzione per filtrare film/serie tv
     searchMovie: function () {
 
-      this.filmTrovati = [];
-      this.serieTrovate = [];
-      this.tipoVisibile = true;
+      // controllo che l'utente inserisca qualcosa nella ricerca
+      if (this.ricercaUtente != '') {
 
-      // richiesta film
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + this.apiKey + '&language=it-IT&query=' + this.ricercaUtente)
-      .then(risultato => {
+        this.filmTrovati = [];
+        this.serieTrovate = [];
+        this.tipoVisibile = true;
+        this.cosaGuardareVisibile = false;
 
-        this.filmTrovati = this.filmTrovati.concat(risultato.data.results);
+        // richiesta film
+        axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + this.apiKey + '&language=it-IT&query=' + this.ricercaUtente)
+        .then(risultato => {
 
-      });
+          this.filmTrovati = this.filmTrovati.concat(risultato.data.results);
 
-      // richiesta serie tv
-      axios.get('https://api.themoviedb.org/3/search/tv?api_key=' + this.apiKey + '&language=it-IT&query=' + this.ricercaUtente)
-      .then(risultato => {
+        });
 
-        this.serieTrovate = this.serieTrovate.concat(risultato.data.results);
+        // richiesta serie tv
+        axios.get('https://api.themoviedb.org/3/search/tv?api_key=' + this.apiKey + '&language=it-IT&query=' + this.ricercaUtente)
+        .then(risultato => {
 
-      });
+          this.serieTrovate = this.serieTrovate.concat(risultato.data.results);
 
-      this.ricercaUtente = '';
+        });
+
+        this.ricercaUtente = '';
+
+      }
 
     },
     // funzione per convertire i voti
