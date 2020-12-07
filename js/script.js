@@ -4,9 +4,28 @@ var app = new Vue({
     ricercaUtente: '',
     apiKey: '75fa11ba07d05d73ee35e8943a4a42f9',
     tipoVisibile: false,
-    cosaGuardareVisibile: true,
+    popolariVisibili: true,
     filmTrovati: [],
     serieTrovate: []
+  },
+  mounted: function () {
+
+    // richiesta film popolari
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=' + this.apiKey + '&language=it-IT')
+    .then(risultato => {
+
+      this.filmTrovati = this.filmTrovati.concat(risultato.data.results);
+
+    });
+
+    // richiesta serie tv popolari
+    axios.get('https://api.themoviedb.org/3/tv/popular?api_key=' + this.apiKey + '&language=it-IT')
+    .then(risultato => {
+
+      this.serieTrovate = this.serieTrovate.concat(risultato.data.results);
+
+    });
+
   },
   methods: {
     // funzione per filtrare film/serie tv
@@ -18,7 +37,7 @@ var app = new Vue({
         this.filmTrovati = [];
         this.serieTrovate = [];
         this.tipoVisibile = true;
-        this.cosaGuardareVisibile = false;
+        this.popolariVisibili = false;
 
         // richiesta film
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + this.apiKey + '&language=it-IT&query=' + this.ricercaUtente)

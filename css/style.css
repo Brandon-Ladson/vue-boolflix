@@ -35,17 +35,6 @@ body{
   border-radius: 3px;
 }
 
-/* regole cosa vuoi guardare */
-#app .cosa-guardare{
-  height: 100%;
-  text-align: center;
-}
-
-#app .cosa-guardare h1{
-  color: #fff;
-  margin-top: 25%;
-}
-
 /* regole container */
 #app .container{
   display: flex;

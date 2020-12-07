@@ -26,15 +26,13 @@
 
       </div>
 
-      <!-- messaggio cosa vuoi guardare -->
-      <div class="cosa-guardare" :class="(cosaGuardareVisibile === true ? 'visibile' : 'invisibile')">
-        <h1>
-          Cosa vuoi guardare?
-        </h1>
-      </div>
-
       <!-- contenitore film -->
       <div class="container">
+
+        <!-- film popolari -->
+        <h1 :class="(popolariVisibili === true ? 'visibile' : 'invisibile')">
+          Film Popolari
+        </h1>
 
         <!-- tipologia contenuto -->
         <h1 :class="(tipoVisibile === true ? 'visibile' : 'invisibile')">
@@ -90,6 +88,11 @@
 
       <!-- contenitore serie tv -->
       <div class="container">
+
+        <!-- serie tv popolari -->
+        <h1 :class="(popolariVisibili === true ? 'visibile' : 'invisibile')">
+          Serie TV Popolari
+        </h1>
 
         <!-- tipologia contenuto -->
         <h1 :class="(tipoVisibile === true ? 'visibile' : 'invisibile')">
